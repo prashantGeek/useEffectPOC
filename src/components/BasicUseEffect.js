@@ -7,7 +7,8 @@ export default function BasicUseEffect() {
 
   // Effect with no dependencies - runs after every render
   useEffect(() => {
-    setMessage(`Component rendered ${Date.now()}`);
+    const now = new Date();
+    setMessage(`Component rendered at ${now.toLocaleTimeString()} on ${now.toLocaleDateString()}`);
   });
 
   // Effect with empty dependency array - runs only once
