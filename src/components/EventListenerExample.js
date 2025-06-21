@@ -33,10 +33,27 @@ export default function EventListenerExample() {
   }, []);
 
   return (
-    <div className="section">
-      <h2>4. Event Listeners</h2>
-      <p>Window Size: {windowSize.width} x {windowSize.height}</p>
-      <p>Mouse Position: ({mousePosition.x}, {mousePosition.y})</p>
+    <div className="bg-white rounded-lg shadow-md p-6 m-4 border border-gray-200">
+      <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b border-blue-100 pb-2">
+        4. Event Listeners
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-purple-50 p-4 rounded-md border border-purple-200">
+          <h3 className="font-semibold text-purple-800 mb-2">📐 Window Size</h3>
+          <p className="font-mono text-purple-700">
+            {windowSize.width} × {windowSize.height} px
+          </p>
+        </div>
+        <div className="bg-orange-50 p-4 rounded-md border border-orange-200">
+          <h3 className="font-semibold text-orange-800 mb-2">🖱️ Mouse Position</h3>
+          <p className="font-mono text-orange-700">
+            X: {mousePosition.x}, Y: {mousePosition.y}
+          </p>
+        </div>
+      </div>
+      <div className="mt-4 text-xs text-gray-500 bg-gray-50 p-3 rounded-md">
+        💡 Move your mouse or resize the window to see real-time updates
+      </div>
     </div>
   );
 }
