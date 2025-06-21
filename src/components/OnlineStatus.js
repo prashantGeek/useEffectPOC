@@ -21,26 +21,33 @@ export default function OnlineStatus() {
   }, []);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 m-4 border border-gray-200">
-      <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b border-blue-100 pb-2">
+    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 h-80 flex flex-col">
+      <h2 className="text-xl font-bold text-blue-600 mb-4 border-b border-blue-100 pb-2">
         5. Online/Offline Status
       </h2>
-      <div className={`p-4 rounded-md border-l-4 ${
-        isOnline 
-          ? 'bg-green-50 border-green-400 text-green-800' 
-          : 'bg-red-50 border-red-400 text-red-800'
-      }`}>
-        <div className="flex items-center">
-          <div className={`w-3 h-3 rounded-full mr-3 ${
-            isOnline ? 'bg-green-500' : 'bg-red-500'
-          }`}></div>
-          <span className="font-semibold">
-            Status: {isOnline ? '🟢 Online' : '🔴 Offline'}
-          </span>
+      <div className="flex-1 flex flex-col justify-between">
+        <div className="flex-1 flex items-center justify-center">
+          <div className={`p-6 rounded-md border-l-4 w-full text-center ${
+            isOnline 
+              ? 'bg-green-50 border-green-400 text-green-800' 
+              : 'bg-red-50 border-red-400 text-red-800'
+          }`}>
+            <div className="flex items-center justify-center mb-3">
+              <div className={`w-4 h-4 rounded-full mr-3 ${
+                isOnline ? 'bg-green-500' : 'bg-red-500'
+              }`}></div>
+              <span className="font-semibold text-lg">
+                {isOnline ? '🟢 Online' : '🔴 Offline'}
+              </span>
+            </div>
+            <p className="text-sm">
+              Status: {isOnline ? 'Connected' : 'Disconnected'}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="mt-4 text-xs text-gray-500 bg-gray-50 p-3 rounded-md">
-        💡 Try disconnecting your internet to see the status change
+        <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded-md mt-3">
+          💡 Try disconnecting your internet to see the status change
+        </div>
       </div>
     </div>
   );

@@ -20,16 +20,18 @@ export default function TimerExample() {
   }, [isRunning]);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 m-4 border border-gray-200">
-      <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b border-blue-100 pb-2">
+    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 h-80 flex flex-col">
+      <h2 className="text-xl font-bold text-blue-600 mb-4 border-b border-blue-100 pb-2">
         3. Timer with Cleanup
       </h2>
-      <div className="space-y-4">
-        <div className="bg-gray-50 p-6 rounded-md text-center">
-          <p className="text-4xl font-mono font-bold text-gray-800 mb-2">{seconds}s</p>
-          <p className="text-sm text-gray-600">Timer Value</p>
+      <div className="flex-1 flex flex-col justify-between">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="bg-gray-50 p-6 rounded-md text-center w-full">
+            <p className="text-4xl font-mono font-bold text-gray-800 mb-2">{seconds}s</p>
+            <p className="text-xs text-gray-600">Timer Value</p>
+          </div>
         </div>
-        <div className="flex space-x-3 justify-center">
+        <div className="flex flex-col space-y-2 mt-4">
           <button 
             className={`font-medium py-2 px-4 rounded-md transition-colors duration-200 shadow-sm hover:shadow-md ${
               isRunning 
